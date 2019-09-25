@@ -16,7 +16,8 @@
 //==============================================================================
 /**
 */
-class AudioPluginLearning0AudioProcessorEditor  : public AudioProcessorEditor
+class AudioPluginLearning0AudioProcessorEditor  : public AudioProcessorEditor,
+                                                  private Slider::Listener
 {
 public:
     AudioPluginLearning0AudioProcessorEditor (AudioPluginLearning0AudioProcessor&);
@@ -25,11 +26,20 @@ public:
     //==============================================================================
     void paint (Graphics&) override;
     void resized() override;
-
+    
 private:
-    // This reference is provided as a quick way for your editor to
-    // access the processor object that created it.
+    Slider inputSlider, outputSlider, offsetSlider;
     AudioPluginLearning0AudioProcessor& processor;
 
+    void sliderValueChanged (Slider* slider) override {
+        if (slider == &inputSlider){
+            processor.UIInput = slider->getValue();
+        } else if(slider == &outputSlider){
+            processor.UIOutput = slider->getValue();
+        } else if(slider == &offsetSlider){
+            processor.UIOffset = slider->getValue();            
+        }
+    };
+    
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AudioPluginLearning0AudioProcessorEditor)
 };

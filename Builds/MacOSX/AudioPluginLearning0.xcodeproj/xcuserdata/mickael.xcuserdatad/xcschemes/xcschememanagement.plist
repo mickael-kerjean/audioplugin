@@ -7,7 +7,7 @@
 		<key>AudioPluginLearning0 - AU.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<key>AudioPluginLearning0 - All.xcscheme</key>
 		<dict>
@@ -27,7 +27,7 @@
 		<key>AudioPluginLearning0 - VST.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</dict>
 </dict>
